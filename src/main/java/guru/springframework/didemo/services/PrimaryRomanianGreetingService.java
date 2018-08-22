@@ -1,16 +1,16 @@
 package guru.springframework.didemo.services;
 
 
-import org.springframework.context.annotation.Primary;
-import org.springframework.context.annotation.Profile;
-import org.springframework.stereotype.Service;
-
-@Service
-@Primary
-@Profile("ro")
 public class PrimaryRomanianGreetingService implements GreetingService {
+
+    private GreetingRepository greetingRepository;
+
+    public PrimaryRomanianGreetingService(GreetingRepository greetingRepository) {
+        this.greetingRepository = greetingRepository;
+    }
+
     @Override
     public String sayGreetings() {
-        return "buna ziua";
+        return greetingRepository.getRomanianGreeting();
     }
 }
