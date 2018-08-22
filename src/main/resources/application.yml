@@ -2,3 +2,9 @@ jms:
   user: Monica
   password: 111
   url: ccc
+
+---
+spring:
+  profiles: it
+jms:
+  user: Giovanni
